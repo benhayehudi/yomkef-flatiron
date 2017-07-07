@@ -1,0 +1,82 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+#title-heading {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 300%;
+  color: #0074D9;
+}
+
+#title-linetwo {
+  font-family: 'Indie Flower', cursive;
+  color: #FF851B;
+}
+
+#title-linethree {
+  font-family: 'Amatic SC', cursive;
+  font-size: 600%;
+  color: #0074D9;
+  display: inline-block;
+}
+
+#title-linethree span {
+  text-decoration: underline;
+  display: inline-block;
+}
+
+#heading-img {
+  display: inline-block;
+}
+
+#page-title {
+  font-family: 'Trocchi', serif;
+  color: #0074D9;
+  font-size: 300%;
+}
+
+#signature {
+  font-family: 'Indie Flower', cursive;
+  color: #0074D9;
+}
+
+/* Set the fixed height of the footer here */
+.footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: auto;
+  max-width: 0 auto;
+  padding: 0px 15px;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+.item-listing {
+  background-color: #DDDDDD;
+  border: 3px solid #0074D9;
+}
+
+.main-content {
+text-align: center;
+}
+
+[class*="span"].centred {
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+
+#flash {
+  color: red;
+}

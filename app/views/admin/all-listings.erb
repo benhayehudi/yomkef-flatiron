@@ -1,0 +1,13 @@
+<% @listings = Listing.find_each do |listing| %>
+<div class="col-md-12 item-listing">
+<strong><h4><%= listing.name %></a></h4></strong><br>
+<strong>Location:</strong> <%= listing.location %><br>
+<strong>URL:</strong> <%= listing.url %><br>
+<strong>Image Link:</strong> <% if listing.img_url == nil || listing.img_url == "" %><%= "No Image Yet" %><% else %><%= listing.img_url %><br>
+<strong>Demographic:</strong> <%= listing.item_category %><br>
+<strong>Description:</strong> <%= listing.description %><Br>
+<strong><a href="/admin/edit-listing/<%= listing.id %>">Edit</a> | <a href="/admin/delete-listing/<%= listing.id %>">Delete</a></strong>
+<% end %>
+</div>
+<% end %>
+<a href="/admin/admin-main">Administrative Main Page</a> | <a href="/">Home Page</a>

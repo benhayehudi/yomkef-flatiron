@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/favicon.ico">
+
+    <title>Yom Kef: Your Fun Day in Israel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/stylesheets/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/navbar.css" rel="stylesheet">
+
+    <!-- Customized styles -->
+    <link href="/stylesheets/footer.css" rel="stylesheet">
+
+    <!-- Custom fonts from Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower|Permanent+Marker|Trocchi" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/javascripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="wrap">
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="text-center">
+      <h1 id="title-heading">Yom Kef</h1>
+      <h4 id="title-linetwo"><em>(Hebrew for fun day)</em></h4>
+      <h2 id="title-linethree"><span id="first-word">Your</span> Fun Day In Israel</h2><img src="/images/flag-title.png" id="heading-img" width="60">
+      </div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/images/YK_thumb_logo.jpg" width="27"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/registrations/signup">Sign Up </a></li>
+              <li><a href="/login">Log In </a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/login">Log In </a></li>
+                  <li><a href="/sessions/my-listings">My Listings </a></li>
+                  <li><a href="/sessions/add-listing">Add Listing </a></li>
+                  <li><a href="/users/user_update">View/Update Your Profile </a></li>
+                  <li><a href="/logout">Log Out </a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/listings/all_listings">Explore Listings </a></li>
+                  <li><a href="/sessions/add-listing">Add Listing </a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="/contact">Contact <span class="sr-only">(current)</span></a></li>
+              <li><a href="/about">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+
+        </div><!--/.container-fluid -->
+      </nav>
+
+    <!-- <div class="main-content"> -->
+    <!--  <%= yield %> -->
+    <!--  </div> -->
+
+  <div class="container">
+    <div class="col-md-offset-1 centered">
+        <%= yield %>
+    </div>
+  </div>
+
+    </div> <!-- /container -->
+  </div> <!-- /wrap -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">
+          <div class="col-md-offset-4">&copy; 2017 Yom Kef: Your Fun Day In Israel. All Rights Reserved.</div>
+              <div class="col-md-offset-5">
+                <a href="/login">Login</a> | <a href="/registrations/signup">Signup</a> | <a href="/listings/all_listings">Explore</a>
+              </div>
+        </p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/javascripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

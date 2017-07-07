@@ -1,0 +1,22 @@
+<div class="col-md-12 item-listing">
+  <meta property="og:image" content="<% if @listing.img_url == nil || @listing.img_url == "" %>
+    <%= "/images/default_listing_img.png" %>
+    <% else %>
+    <%= @listing.img_url %>
+    <% end %>"></meta>
+  <meta property="og:url" content="<%= @listing.url %>"></meta>
+  
+  <img src="<% if @listing.img_url == nil || @listing.img_url == "" %>
+    <%= "/images/default_listing_img.png" %>
+    <% else %>
+    <%= @listing.img_url %>
+    <% end %>" class="img-thumbnail" alt="Yom Kef" align="left">
+<strong><h4><%= @listing.name %></h4></strong><a href="#"><a href="/sessions/edit-listing/<%= @listing.id %>"> + Edit Listing</a><br><br>
+<strong>Location:</strong> <%= @listing.location %><br>
+<strong>URL:</strong> <a href="<%= @listing.url %>" target="_blank"><%= @listing.url %></a><br>
+<strong>Category:</strong> <%= @listing.item_category %><br>
+<strong>Description:</strong> <%= @listing.description %><br>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//yomkef.fun/listings/show/<%= @listing.id %>" target="_blank"><img src="/images/facebook-icon.png" width="40"></a> <a href="https://twitter.com/home?status=Check%20out%20this%20awesome%20Israel%20activity%20I%20found%20on%20Yom%20Kef!%20http%3A//yomkef.fun/listings/show/<%= @listing.id %>" target="_blank"><img src="/images/twitter-icon.png" width="40"></a>
+</div>
+
+<h4><a href="/listings/all_listings">Return To All Listings</a></h4>
