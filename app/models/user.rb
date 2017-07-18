@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :listings
+  
   has_secure_password
-  validates_presence_of :username
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 end

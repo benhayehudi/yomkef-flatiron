@@ -44,57 +44,84 @@
 
       <!-- Static navbar -->
       <div class="text-center">
-      <h1 id="title-heading">Yom Kef</h1>
-      <h4 id="title-linetwo"><em>(Hebrew for fun day)</em></h4>
-      <h2 id="title-linethree"><span id="first-word">Your</span> Fun Day In Israel</h2><img src="/images/flag-title.png" id="heading-img" width="60">
+        <h1 id="title-heading">Yom Kef</h1>
+        <h4 id="title-linetwo"><em>(Hebrew for fun day)</em></h4>
+        <h2 id="title-linethree"><span id="first-word">Your</span> Fun Day In Israel</h2>
+          <img src="/images/flag-title.png" id="heading-img" width="60">
       </div>
+
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button"
+              class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                  data-target="#navbar"
+                    aria-expanded="false"
+                      aria-controls="navbar"
+              >
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="/images/YK_thumb_logo.jpg" width="27"></a>
+
+            <a class="navbar-brand" href="/">
+              <img src="/images/YK_thumb_logo.jpg" width="27">
+            </a>
           </div>
+
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="/">Home</a></li>
-              <li><a href="/registrations/signup">Sign Up </a></li>
-              <li><a href="/login">Log In </a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account
-                  <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+                <% if !logged_in? %>
+                  <li><a href="/registrations/signup">Sign Up </a></li>
                   <li><a href="/login">Log In </a></li>
-                  <li><a href="/sessions/my-listings">My Listings </a></li>
-                  <li><a href="/sessions/add-listing">Add Listing </a></li>
-                  <li><a href="/users/user_update">View/Update Your Profile </a></li>
-                  <li><a href="/logout">Log Out </a></li>
-                </ul>
-              </li>
+                <% else %>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    My Account <span class="caret"></span>
+                    </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/sessions/my-listings">My Listings </a></li>
+                    <li><a href="/sessions/add-listing">Add Listing </a></li>
+                    <li><a href="/users/user_update">View/Update Your Profile </a></li>
+                    <li><a href="/logout">Log Out </a></li>
+                  </ul>
+                </li>
+              <% end %>
+
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings <span class="caret"></span></a>
+                <a href="#"
+                  class="dropdown-toggle"
+                    data-toggle="dropdown"
+                      role="button"
+                        aria-haspopup="true"
+                          aria-expanded="false">
+                          Listings <span class="caret"></span>
+                 </a>
+
                 <ul class="dropdown-menu">
                   <li><a href="/listings/all_listings">Explore Listings </a></li>
                   <li><a href="/sessions/add-listing">Add Listing </a></li>
                 </ul>
               </li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="/contact">Contact <span class="sr-only">(current)</span></a></li>
-              <li><a href="/about">About</a></li>
+              <li class="active">
+                <a href="/contact">
+                  Contact <span class="sr-only">(current)</span>
+                </a></li>
+              <li>
+                <a href="/about">About
+                </a>
+              </li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
 
-        </div><!--/.container-fluid -->
+        </div>
       </nav>
-
-    <!-- <div class="main-content"> -->
-    <!--  <%= yield %> -->
-    <!--  </div> -->
 
   <div class="container">
     <div class="col-md-offset-1 centered">
@@ -102,18 +129,24 @@
     </div>
   </div>
 
-    </div> <!-- /container -->
-  </div> <!-- /wrap -->
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">
-          <div class="col-md-offset-4">&copy; 2017 Yom Kef: Your Fun Day In Israel. All Rights Reserved.</div>
-              <div class="col-md-offset-5">
-                <a href="/login">Login</a> | <a href="/registrations/signup">Signup</a> | <a href="/listings/all_listings">Explore</a>
-              </div>
-        </p>
-      </div>
-    </footer>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">
+
+        <div class="col-md-offset-4">
+          &copy; 2017 Yom Kef: Your Fun Day In Israel. All Rights Reserved.
+        </div>
+
+        <div class="col-md-offset-5">
+          <a href="/login">Login</a> | <a href="/registrations/signup">Signup</a> | <a href="/listings/all_listings">Explore</a>
+        </div>
+
+      </p>
+    </div>
+  </footer>
 
 
     <!-- Bootstrap core JavaScript

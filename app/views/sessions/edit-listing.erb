@@ -1,52 +1,104 @@
 <h2 id="page-title">Update Your Listing</h2>
 
 <div class="input-group input-group-lg">
+
   <form action="/listing-update/<%= @listing.id %>" method="POST">
 
-  <div class="form-group form-group-lg">
-    <label name="name"><input type="text" class="form-control input-lg" value="<%= @listing.name %>" name="name" aria-describedby="sizing-addon1" placeholder="Listing Name"></label><br>
-  </div>
+    <div class="form-group form-group-lg">
+      <label name="name">
+        <input type="text"
+          class="form-control input-lg"
+            value="<%= @listing.name %>"
+              name="name"
+                aria-describedby="sizing-addon1"
+                  placeholder="Listing Name"
+        >
+      </label>
+      <br>
+    </div>
 
-  <div class="form-group">
-  <label name="location"><select name="location" class="form-control input-lg"><br>
-  <option value="<%= @listing.location %>"><%= @listing.location %></option>
-  <option value="Jerusalem">Jerusalem</option>
-  <option value="Tel-Aviv">Tel Aviv</option>
-  <option value="Eilat">Eilat</option>
-  <option value="Haifa">Haifa</option>
-  <option value="Beer-Sheva">Beer-Sheva</option>
-  <option value="North">North</option>
-  <option value="Center">Center</option>
-  <option value="South">South</option>
-  </select></label><br>
-  </div>
+      <div class="form-group">
+        <label name="location">
+          <select name="location"
+            class="form-control input-lg">
+          <br>
+            <option value="<%= @listing.location %>"><%= @listing.location %></option>
+            <option value="Jerusalem">Jerusalem</option>
+            <option value="Tel-Aviv">Tel Aviv</option>
+            <option value="Eilat">Eilat</option>
+            <option value="Haifa">Haifa</option>
+            <option value="Beer-Sheva">Beer-Sheva</option>
+            <option value="North">North</option>
+            <option value="Center">Center</option>
+            <option value="South">South</option>
+          </select>
+        </label>
+        <br>
+      </div>
 
-  <div class="form-group">
-  <label name="website"><input type="text" class="form-control input-lg" value="<%= @listing.url %>" placeholder="Listing Website" name="url" aria-describedby="sizing-addon1"></label><br>
-  </div>
+      <div class="form-group">
+        <label name="website">
+          <input type="text"
+            class="form-control input-lg"
+              value="<%= @listing.url %>"
+                placeholder="Listing Website"
+                  name="url"
+                    aria-describedby="sizing-addon1"
+          >
+        </label>
+        <br>
+      </div>
 
-  <div class="form-group">
-  <label name="img_url"><input type="text" class="form-control input-lg" value="<%= @listing.img_url %>" placeholder="Image Link" name="img_url" aria-describedby="sizing-addon1"></label><br>
-  </div>
+      <div class="form-group">
+        <label name="img_url">
+          <input type="text"
+            class="form-control input-lg"
+              value="<%= @listing.img_url %>"
+                placeholder="Image Link"
+                  name="img_url"
+                    aria-describedby="sizing-addon1"
+          >
+        </label>
+        <br>
+      </div>
 
-  <div class="form-group">
-  <label name="item_category"><select name="item_category" class="form-control input-lg"><br>
-  <option value="<%= @listing.item_category %>"><%= @listing.item_category %></option>
-  <option value="Everyone">Everyone</option>
-  <option value="Family">Family</option>
-  <option value="Adults">Adults</option>
-  <option value="Kids">Kids</option>
-  <option value="Seniors">Seniors</option>
-  </select></label><br>
-  </div>
+      <div class="form-group">
+        <label name="item_category">
+          <select name="item_category"
+            class="form-control input-lg">
+          <br>
+            <option value="<%= @listing.item_category %>"><%= @listing.item_category %></option>
+            <option value="Everyone">Everyone</option>
+            <option value="Family">Family</option>
+            <option value="Adults">Adults</option>
+            <option value="Kids">Kids</option>
+            <option value="Seniors">Seniors</option>
+          </select>
+        </label>
+        <br>
+      </div>
 
-  <div class="form-group">
-  <label name="description"><textarea name="description" class="form-control input-lg"><% if @listing.description == nil || @listing.description == "" %><%= "Listing Description" %><% else %><%= @listing.description %><% end %></textarea></label><br>
-  </div>
+      <div class="form-group">
+        <label name="description">
+          <textarea name="description"
+            class="form-control input-lg">
+              <% if @listing.description == nil || @listing.description == "" %>
+                <%= "Listing Description" %>
+                <% else %>
+                  <%= @listing.description %>
+              <% end %>
+            </textarea>
+          </label>
+          <br>
+        </div>
 
-  <div class="form-group">
-  <label name="submit"><input type="submit" value="Submit" class="btn btn-default"></label>
-  </div>
-
-  </form>
-  </div>
+        <div class="form-group">
+          <label name="submit">
+            <input type="submit"
+              value="Submit"
+                class="btn btn-default"
+            >
+          </label>
+        </div>
+      </form>
+    </div>

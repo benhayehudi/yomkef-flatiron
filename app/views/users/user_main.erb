@@ -2,22 +2,57 @@
 <h2 id="page-title">Welcome, <%= @user.username %>!</h2>
 
 <a href="/users/user_update">Update Your Profile</a> | <a href="/logout">Log Out</a> | <a href="/listings/all_listings">Explore Listings</a>
+
 <br><br>
+
 <h3>Your Listings</h3>
+
 <br>
 
 <% @listings = @user.listings %>
-<% @listings.all.each do |listing| %>
-<div class="col-md-12 item-listing">
-  <img src="<% if listing.img_url == nil || listing.img_url == ""%>
-    <%= "/images/default_listing_img.png" %>
-    <% else %>
-    <%= listing.img_url %>
-    <% end %>" class="img-thumbnail" alt="Yom Kef" align="left" width="120">
-<strong><h4><%= listing.name %></h4></strong><a href="/sessions/edit-listing/<%= listing.id %>"> + Edit Listing</a><br><br>
-<strong>Location:</strong> <%= listing.location %><br>
-<strong>URL:</strong> <a href="<%= listing.url %>" target="_blank"><%= listing.url %></a><br>
-<strong>Category:</strong> <%= listing.item_category %><br>
-<strong>Description:</strong> <%= listing.description %><br>
-</div>
-<% end %>
+  <% @listings.all.each do |listing| %>
+
+    <div class="col-md-12 item-listing">
+
+      <img src="
+        <% if listing.img_url == nil || listing.img_url == ""%>
+          <%= "/images/default_listing_img.png" %>
+        <% else %>
+          <%= listing.img_url %>
+        <% end %>"
+          class="img-thumbnail"
+            alt="Yom Kef"
+              align="left"
+                width="120"
+       >
+
+       <strong>
+         <h4><%= listing.name %></h4>
+       </strong>
+       <a href="/sessions/edit-listing/<%= listing.id %>">
+          + Edit Listing
+       </a>
+
+       <br><br>
+
+       <strong>Location:</strong>
+        <%= listing.location %>
+        <br>
+
+        <strong>URL:</strong>
+          <a href="<%= listing.url %>"
+            target="_blank">
+              <%= listing.url %>
+          </a>
+          <br>
+
+        <strong>Category:</strong>
+          <%= listing.item_category %>
+        <br>
+
+        <strong>Description:</strong>
+          <%= listing.description %>
+        <br>
+
+    </div>
+  <% end %>
