@@ -1,7 +1,7 @@
 
 <h2 id="page-title">Welcome, <%= current_user.username %>!</h2>
 
-<a href="/users/user_update">Update Your Profile</a> | <a href="/logout">Log Out</a> | <a href="/listings/all_listings">Explore Listings</a>
+<a href="/users/user_update">Update Your Profile</a> | <a href="/logout">Log Out</a> | <a href="/listings">Explore Listings</a>
 
 <br><br>
 
@@ -29,7 +29,7 @@
        <strong>
          <h4><%= listing.name %></h4>
        </strong>
-       <a href="/sessions/edit-listing/<%= listing.id %>">
+       <a href="/listings/edit/<%= listing.id %>">
           + Edit Listing
        </a>
 

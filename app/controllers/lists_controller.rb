@@ -2,20 +2,11 @@ require "pry"
 
 class ListsController < ApplicationController
 
-  get "/sessions/my-listings" do
-    if logged_in?
-      @user = current_user
-      erb :'/listings/index'
-    else
-      redirect to '/login'
-    end
-  end
-
-  get "/listings/all_listings" do
+  get "/listings" do
     erb :'/listings/index'
   end
 
-  get "/sessions/add-listing" do
+  get "/listings/new" do
     if logged_in?
       @user = current_user
       erb :'/listings/new'
@@ -24,14 +15,13 @@ class ListsController < ApplicationController
     end
   end
 
-  post "/add-listing" do
-    @user = current_user
+  post "/listings/new" do
     if logged_in?
-      unless params[:name] == "" || params[:description] == "" || params[:location] == "default" || params[:item_category] == "selection"
-      @listing = Listing.create(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"], user_id: params["user_id"])
-      redirect '/listings/all_listings'
-    else
-      redirect to "/login"
+        @listing = Listing.new(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"], user_id: params["user_id"])
+        if @listing.save
+          redirect '/listings'
+        else
+          redirect to "/login"
       end
     end
   end
@@ -40,35 +30,35 @@ class ListsController < ApplicationController
     erb :'/listings/search-listings'
   end
 
-  get '/sessions/add-listing-item/:id' do
+  get '/listings/new/:id' do
     if logged_in?
-      user_id = session[:user_id]
+      user_id = current_user
       listing = Listing.find_by_id(params[:id])
       @new_listing = Listing.new(name: listing.name, location: listing.location, url: listing.url, img_url: listing.img_url, item_category: listing.item_category, description: listing.description, user_id: user_id)
       if @new_listing.save
         redirect '/users/user_main'
       else
         redirect to "/login"
+        end
       end
     end
 
-  get '/sessions/edit-listing/:id' do
+  get '/listings/update/:id' do
     @listing = Listing.find_by_id(params[:id])
     if logged_in?
       @listing = Listing.find_by_id(params[:id])
-      erb :'/sessions/edit-listing'
+      erb :'/listings/update'
     else
       redirect to "/login"
     end
   end
 
-  post '/listing-update/:id' do
-    @user = current_user
-    @listing = Listing.find_by_id(params[:id])
+  post '/listings/update/:id' do
     if logged_in?
+      @listing = Listing.find_by_id(params[:id])
       @listing.update_attributes(name: params["name"], location: params["location"], url: params["url"], img_url: params["img_url"], item_category: params["item_category"], description: params["description"])
       @listing.save
-      redirect '/sessions/my-listings'
+      redirect '/listings'
     else
       redirect to "/login"
     end

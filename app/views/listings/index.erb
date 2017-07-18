@@ -1,0 +1,155 @@
+<% if logged_in? %>
+
+  <h2 id="page-title">My Listings</h2>
+
+  <% @listings = current_user.listings %>
+    <% @listings.all.each do |listing| %>
+
+      <div class="col-md-12 item-listing">
+
+        <img src="
+          <% if listing.img_url == nil || listing.img_url == "" %>
+            <%= "/images/default_listing_img.png" %>
+            <% else %>
+              <%= listing.img_url %>
+            <% end %>"
+            class="img-thumbnail" alt="Yom Kef" align="left" width="120">
+
+        <strong>
+          <h4><a href="/listings/show/<%= listing.id %>"><%= listing.name %></a></h4>
+        </strong>
+        <a href="/sessions/edit-listing/<%= listing.id %>"> + Edit Listing</a>
+        <br><br>
+
+        <strong>Location:</strong>
+          <%= listing.location %>
+        <br>
+
+        <strong>URL:</strong>
+          <a href="<%= listing.url %>"
+            target="_blank">
+            <%= listing.url %></a>
+        <br>
+
+        <strong>Category:</strong>
+          <%= listing.item_category %>
+        <br>
+
+        <strong>Description:</strong>
+          <%= listing.description %>
+        <br>
+      </div>
+    <% end %>
+
+<% else %>
+
+  <h2 id="page-title">All Listings</h2>
+
+  <div class="input-group input-group-sm col-md-offset-7">
+
+    <form method="get" action="/search-listings" class="form-inline">
+
+      <div class="form-group">
+
+        <div class="form-text">Search By Name</div>
+          <label name="name">
+            <input type="text"
+              class="form-control input-sm"
+                value="Name"
+                  placeholder="Name: "
+                    name="name"
+                      aria-describedby="sizing-addon1"
+            >
+          </label>
+          <br>
+        </div>
+
+        <div class="form-group">
+
+          <div class="form-text">Location</div>
+            <label name="location">
+              <select name="location" class="form-control input-sm">
+            <br>
+                <option value="Location-Selection">Selection</option>
+                <option value="Jerusalem">Jerusalem</option>
+                <option value="Tel-Aviv">Tel Aviv</option>
+                <option value="Eilat">Eilat</option>
+                <option value="Haifa">Haifa</option>
+                <option value="Beer-Sheva">Beer-Sheva</option>
+                <option value="North">North</option>
+                <option value="Center">Center</option>
+                <option value="South">South</option>
+              </select>
+            </label>
+            <br>
+          </div>
+
+      <div class="form-group">
+
+        <div class="form-text">Category</div>
+          <label name="item_category">
+            <select name="item_category"
+              value="Selection"
+                class="form-control input-sm"
+            >
+          <br>
+            <option value="Select">Selection</option>
+            <option value="Everyone">Everyone</option>
+            <option value="Family">Family</option>
+            <option value="Adults">Adults</option>
+            <option value="Kids">Kids</option>
+            <option value="Seniors">Seniors</option>
+          </select>
+        </label>
+        <br>
+      </div>
+
+      <label name="submit">
+        <input type="submit" value="Submit" class="btn btn-default">
+      </label>
+
+      </form>
+    </div>
+
+    <% @listings = Listing.all %>
+      <% @listings.uniq.each do |listing| %>
+
+        <div class="col-md-12 item-listing">
+          <img src="
+            <% if listing.img_url == nil || listing.img_url == "" %>
+              <%= "/images/default_listing_img.png" %>
+            <% else %>
+              <%= listing.img_url %>
+            <% end %>"
+            class="img-thumbnail"
+              alt="Yom Kef"
+                align="left"
+                  width="120"
+          >
+
+        <strong>
+          <h4><a href="/listings/show/<%= listing.id %>">
+            <%= listing.name %></a>
+          </h4>
+        </strong>
+
+          <a href="/sessions/add-listing-item/<%= listing.id %>">
+             + Add This
+          </a>
+          <br><br>
+
+        <strong>
+          Location:
+        </strong>
+        <%= listing.location %>
+        <br>
+
+        <strong>
+          Category:
+        </strong>
+        <%= listing.item_category %>
+        <br>
+
+      </div>
+      <% end %>
+    <% end %>
