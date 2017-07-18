@@ -5,12 +5,12 @@
     <div class="form-group form-group-lg">
       <label name="name">
         <input type="text"
-          class="form-control input-lg"
-            value="<%= @listing_entry.name %>"
-              name="name"
-                aria-describedby="sizing-addon1"
-                  placeholder="Listing Name"
-         >
+        class="form-control input-lg"
+        value="<%= @listing_entry.name %>"
+        name="name"
+        aria-describedby="sizing-addon1"
+        placeholder="Listing Name"
+        >
        </label>
        <br>
      </div>
@@ -37,11 +37,11 @@
     <div class="form-group">
       <label name="website">
         <input type="text"
-          class="form-control input-lg"
-            value="<%= @listing_entry.url %>"
-              placeholder="Listing Website"
-                name="url"
-                  aria-describedby="sizing-addon1"
+        class="form-control input-lg"
+        value="<%= @listing_entry.url %>"
+        placeholder="Listing Website"
+        name="url"
+        aria-describedby="sizing-addon1"
         >
       </label>
       <br>
@@ -50,11 +50,11 @@
     <div class="form-group">
       <label name="img_url">
         <input type="text"
-          class="form-control input-lg"
-            value="<%= @listing_entry.img_url %>"
-              placeholder="Image Link"
-                name="img_url"
-                  aria-describedby="sizing-addon1"
+        class="form-control input-lg"
+        value="<%= @listing_entry.img_url %>"
+        placeholder="Image Link"
+        name="img_url"
+        aria-describedby="sizing-addon1"
         >
       </label>
       <br>
@@ -63,7 +63,7 @@
     <div class="form-group">
       <label name="item_category">
         <select name="item_category"
-          class="form-control input-lg">
+        class="form-control input-lg">
         <br>
           <option value="<%= @listing_entry.item_category %>">
             <%= @listing_entry.item_category %>
@@ -80,28 +80,29 @@
 
     <div class="form-group">
       <label name="description">
-          <textarea name="description"
-            class="form-control input-lg">
-              <% if @listing_entry.description == nil || @listing_entry.description == "" %>
-                <%= "Listing Description" %>
-              <% else %>
-                <%= @listing_entry.description %>
-              <% end %>
-            </textarea>
-          </label>
-          <br>
-        </div>
+        <textarea name="description"
+        class="form-control input-lg">
+          <% if @listing_entry.description == nil || @listing_entry.description == "" %>
+            <%= "Listing Description" %>
+          <% else %>
+            <%= @listing_entry.description %>
+          <% end %>
+        </textarea>
+      </label>
+      <br>
+    </div>
 
         <div class="form-group">
           <label name="submit">
               <input type="submit"
-                value="Submit"
-                  class="btn btn-default"
+              value="Submit"
+              class="btn btn-default"
               >
-            </label>
-          </div>
-        </form>
-      </div>
+          </label>
+        </div>
+
+      </form>
+    </div>
 
   <p>Submitted by:</p>
 

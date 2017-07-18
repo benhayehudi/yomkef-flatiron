@@ -7,12 +7,12 @@
     <div class="form-group form-group-lg">
       <label name="name">
         <input type="text"
-          class="form-control input-lg"
-            value="<%= current_user.name %>"
-              name="name"
-                aria-describedby="sizing-addon1"
-                  placeholder="Name"
-         >
+        class="form-control input-lg"
+        value="<%= current_user.name %>"
+        name="name"
+        aria-describedby="sizing-addon1"
+        placeholder="Name"
+        >
        </label>
        <br>
      </div>
@@ -20,11 +20,11 @@
       <div class="form-group">
         <label name="username">
           <input type="text"
-            class="form-control input-lg"
-              value="<%= current_user.username %>"
-                name="username"
-                  placeholder="Username"
-           >
+          class="form-control input-lg"
+          value="<%= current_user.username %>"
+          name="username"
+          placeholder="Username"
+          >
          </label>
          <br>
        </div>
@@ -32,12 +32,12 @@
        <div class="form-group">
          <label name="email">
            <input type="email"
-            class="form-control input-lg"
-              value="<%= current_user.email %>"
-                placeholder="Email"
-                  name="email"
-                    aria-describedby="sizing-addon1"
-            >
+           class="form-control input-lg"
+           value="<%= current_user.email %>"
+           placeholder="Email"
+           name="email"
+           aria-describedby="sizing-addon1"
+           >
           </label>
           <br>
         </div>
@@ -45,11 +45,11 @@
         <div class="form-group">
           <label name="facebook_url">
             <input type="text"
-              class="form-control input-lg"
-                value="<%= current_user.facebook_url %>"
-                  placeholder="Your Facebook Profile Link"
-                    name="facebook_url"
-                      aria-describedby="sizing-addon1"
+            class="form-control input-lg"
+            value="<%= current_user.facebook_url %>"
+            placeholder="Your Facebook Profile Link"
+            name="facebook_url"
+            aria-describedby="sizing-addon1"
             >
           </label>
           <br>
@@ -58,25 +58,25 @@
         <div class="form-group">
           <label name="twitter_url">
             <input type="text"
-              name="twitter_url"
-                class="form-control input-lg"
-                  value="<%= current_user.twitter_url %>"
-                    placeholder="Your Twitter Profile Link"
-                      aria-describedby="sizing-addon1"
-              >
-            </label>
-            <br>
-          </div>
+            name="twitter_url"
+            class="form-control input-lg"
+            value="<%= current_user.twitter_url %>"
+            placeholder="Your Twitter Profile Link"
+            aria-describedby="sizing-addon1"
+            >
+          </label>
+          <br>
+        </div>
 
           <div class="form-group">
             <label name="instagram_url">
               <input type="text"
-                name="instagram_url"
-                  class="form-control input-lg"
-                    value="<%= current_user.instagram_url %>"
-                      placeholder="Your Instagram Profile Link"
-                        aria-describedby="sizing-addon1"
-               >
+              name="instagram_url"
+              class="form-control input-lg"
+              value="<%= current_user.instagram_url %>"
+              placeholder="Your Instagram Profile Link"
+              aria-describedby="sizing-addon1"
+              >
              </label>
              <br>
            </div>
@@ -84,22 +84,22 @@
            <div class="form-group">
              <label name="about_me">
                 <textarea name="about_me"
-                  class="form-control input-lg">
-                    <% if current_user.about_me == nil || current_user.about_me == "" %>
-                      <%= "About Me" %>
-                    <% else %>
-                      <%= current_user.about_me %>
-                    <% end %>
-                  </textarea>
-                </label>
-                <br>
-              </div>
+                class="form-control input-lg">
+                  <% if current_user.about_me == nil || current_user.about_me == "" %>
+                    <%= "About Me" %>
+                  <% else %>
+                    <%= current_user.about_me %>
+                  <% end %>
+                </textarea>
+              </label>
+              <br>
+            </div>
 
           <div class="form-group">
             <label name="submit">
               <input type="submit"
-                value="Submit"
-                  class="btn btn-default"
+              value="Submit"
+              class="btn btn-default"
               >
             </label>
           </div>
@@ -113,19 +113,19 @@
     <form action="/update-pw" method="POST">
 
       <input type="hidden"
-        name="pw_username"
-          value="<%= current_user.username %>"
+      name="pw_username"
+      value="<%= current_user.username %>"
       >
 
       <input type="password"
-        name="old_password"
-          placeholder="Old Password: "
+      name="old_password"
+      placeholder="Old Password: "
       >
       <br>
 
       <input type="password"
-        name="new_password"
-          placeholder="New Password: "
+      name="new_password"
+      placeholder="New Password: "
       >
       <br>
 
