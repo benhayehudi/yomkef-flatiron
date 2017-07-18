@@ -1,10 +1,33 @@
 <% @users = User.find_each do |user| %>
-<div class="col-md-12 item-listing">
-<strong><h4><%= user.name %></a></h4></strong><br>
-<strong>Email:</strong> <%= user.email %><br>
-<strong>Username:</strong> <%= user.username %><br>
-<strong>About:</strong> <% if user.about_me == nil || user.about_me == "" %><%= "No About Me Yet" %><% else %><%= user.about_me %><br><% end %><br>
-<strong><a href="/admin/edit-user/<%= user.id %>">Edit</a> | <a href="/admin/delete-user/<%= user.id %>">Delete</a></strong>
-</div>
+
+  <div class="col-md-12 item-listing">
+
+    <strong>
+      <h4><%= user.name %></a></h4>
+    </strong>
+    <br>
+
+    <strong>Email:</strong>
+      <%= user.email %>
+    <br>
+
+    <strong>Username:</strong>
+      <%= user.username %>
+    <br>
+
+    <strong>About:</strong>
+    <% if user.about_me == nil || user.about_me == "" %>
+      <%= "No About Me Yet" %>
+    <% else %>
+      <%= user.about_me %>
+    <% end %>
+    <br>
+
+    <strong>
+      <a href="/admin/edit-user/<%= user.id %>">Edit</a> | <a href="/admin/delete-user/<%= user.id %>">Delete</a>
+    </strong>
+
+  </div>
 <% end %>
+
 <a href="/admin/admin-main">Administrative Main Page</a> | <a href="/">Home Page</a>

@@ -1,6 +1,6 @@
 <h2 id="page-title">My Listings</h2>
 
-<% @listings = @user.listings %>
+<% @listings = current_user.listings %>
   <% @listings.all.each do |listing| %>
 
     <div class="col-md-12 item-listing">
